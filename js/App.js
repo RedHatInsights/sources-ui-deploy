@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b0d3340dc25b30194605";
+/******/ 	var hotCurrentHash = "568976c49be358a8669d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1190,10 +1190,10 @@ var SourcesPage = Object(_Utilities_asyncComponent__WEBPACK_IMPORTED_MODULE_4__[
 });
 var paths = {
   sources: '/',
-  sources_new: '/new',
+  sourcesNew: '/new',
   providers: '/providers',
-  provider_new: '/providers/new',
-  provider_detail: '/:id',
+  providerNew: '/providers/new',
+  providerDetail: '/:id',
   topology: '/:id/topology'
 };
 
@@ -1241,7 +1241,7 @@ var Routes = function Routes(props) {
     rootClass: "providers"
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(InsightsRoute, {
     exact: true,
-    path: paths.sources_new,
+    path: paths.sourcesNew,
     component: SourcesPage,
     rootClass: "providers"
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(InsightsRoute, {
@@ -1251,7 +1251,7 @@ var Routes = function Routes(props) {
     rootClass: "providers"
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(InsightsRoute, {
     exact: true,
-    path: paths.provider_new,
+    path: paths.providerNew,
     component: ProviderPage,
     rootClass: "providers"
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(InsightsRoute, {
@@ -1260,7 +1260,7 @@ var Routes = function Routes(props) {
     rootClass: "provider"
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(InsightsRoute, {
     exact: true,
-    path: paths.provider_detail,
+    path: paths.providerDetail,
     component: DetailPage,
     rootClass: "provider"
   }), dynamicRoutes(_views_viewDefinitions__WEBPACK_IMPORTED_MODULE_7__["viewDefinitions"]), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -1627,7 +1627,7 @@ var PAGE_AND_SIZE_LISTING_DATA = 'PAGE_AND_SIZE_LISTING_DATA';
 /*!*********************************************!*\
   !*** ./src/redux/action-types-providers.js ***!
   \*********************************************/
-/*! exports provided: ACTION_TYPES, SELECT_ENTITY, EXPAND_ENTITY, SORT_ENTITIES, PAGE_AND_SIZE, ADD_PROVIDER, FILTER_PROVIDERS, CLOSE_ALERT, ADD_ALERT */
+/*! exports provided: ACTION_TYPES, SELECT_ENTITY, EXPAND_ENTITY, SORT_ENTITIES, PAGE_AND_SIZE, ADD_PROVIDER, FILTER_PROVIDERS, SET_FILTER_COLUMN, CLOSE_ALERT, ADD_ALERT */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1639,6 +1639,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_AND_SIZE", function() { return PAGE_AND_SIZE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_PROVIDER", function() { return ADD_PROVIDER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FILTER_PROVIDERS", function() { return FILTER_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_FILTER_COLUMN", function() { return SET_FILTER_COLUMN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSE_ALERT", function() { return CLOSE_ALERT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_ALERT", function() { return ADD_ALERT; });
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
@@ -1657,6 +1658,7 @@ var SORT_ENTITIES = 'SORT_ENTITIES';
 var PAGE_AND_SIZE = 'PAGE_AND_SIZE';
 var ADD_PROVIDER = 'ADD_PROVIDER';
 var FILTER_PROVIDERS = 'FILTER_PROVIDERS';
+var SET_FILTER_COLUMN = 'SET_FILTER_COLUMN';
 var CLOSE_ALERT = 'CLOSE_ALERT';
 var ADD_ALERT = 'ADD_ALERT';
 
@@ -1882,12 +1884,17 @@ var addProvider = function addProvider(state, _ref7) {
 };
 
 var filterProviders = function filterProviders(state, _ref8) {
-  var _ref8$payload = _ref8.payload,
-      column = _ref8$payload.column,
-      value = _ref8$payload.value;
+  var value = _ref8.payload.value;
+  return processListInState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
+    filterValue: value,
+    pageNumber: 1
+  }));
+};
+
+var setFilterColumn = function setFilterColumn(state, _ref9) {
+  var column = _ref9.payload.column;
   return processListInState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
     filterColumn: column,
-    filterValue: value,
     pageNumber: 1
   }));
 };
@@ -1922,7 +1929,7 @@ const createSourceFulFilled = (state, { payload }) => {
 */
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_ACTION_TYPES$LOAD_EN = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_ENTITIES_PENDING, entitiesPending), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_ENTITIES_FULFILLED, entitiesLoaded), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_SOURCE_TYPES_PENDING, sourceTypesPending), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_SOURCE_TYPES_FULFILLED, sourceTypesLoaded), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["SELECT_ENTITY"], selectEntity), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["EXPAND_ENTITY"], expandEntity), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["SORT_ENTITIES"], sortEntities), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["PAGE_AND_SIZE"], setPageAndSize), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ADD_PROVIDER"], addProvider), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["FILTER_PROVIDERS"], filterProviders), _ACTION_TYPES$LOAD_EN);
+/* harmony default export */ __webpack_exports__["default"] = (_ACTION_TYPES$LOAD_EN = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_ENTITIES_PENDING, entitiesPending), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_ENTITIES_FULFILLED, entitiesLoaded), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_SOURCE_TYPES_PENDING, sourceTypesPending), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ACTION_TYPES"].LOAD_SOURCE_TYPES_FULFILLED, sourceTypesLoaded), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["SELECT_ENTITY"], selectEntity), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["EXPAND_ENTITY"], expandEntity), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["SORT_ENTITIES"], sortEntities), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["PAGE_AND_SIZE"], setPageAndSize), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["ADD_PROVIDER"], addProvider), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["FILTER_PROVIDERS"], filterProviders), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ACTION_TYPES$LOAD_EN, _action_types_providers__WEBPACK_IMPORTED_MODULE_2__["SET_FILTER_COLUMN"], setFilterColumn), _ACTION_TYPES$LOAD_EN);
 
 /***/ }),
 

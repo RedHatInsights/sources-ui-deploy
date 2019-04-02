@@ -367,12 +367,9 @@ function (_React$Component) {
           // expanded content
           id: item.id + '_detail',
           parent: index * 2,
-          cells: [{
-            title: item.expanded ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SourceExpandedView__WEBPACK_IMPORTED_MODULE_17__["default"], {
-              sourceId: item.id
-            }) : 'collapsed content',
-            colSpan: _this.filteredColumns.length + 1
-          }]
+          cells: [item.expanded ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SourceExpandedView__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            sourceId: item.id
+          }) : 'collapsed content']
         }];
       }));
       _this.sourceTypeMap = new Map(sourceTypes.map(function (t) {

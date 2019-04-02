@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "232d9d5e73fb1eec0346";
+/******/ 	var hotCurrentHash = "ef4828ee3ce6bafa2310";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -997,19 +997,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux_promise_middleware__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! redux-promise-middleware */ "./node_modules/redux-promise-middleware/dist/es/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Routes */ "./src/Routes.js");
-/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./App.scss */ "./src/App.scss");
-/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_App_scss__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _redux_reducers_providers__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./redux/reducers/providers */ "./src/redux/reducers/providers.js");
-/* harmony import */ var _redux_reducers_listing__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./redux/reducers/listing */ "./src/redux/reducers/listing.js");
-/* harmony import */ var _redux_reducers_topology__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./redux/reducers/topology */ "./src/redux/reducers/topology.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
+/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+/* harmony import */ var _redux_reducers_providers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./redux/reducers/providers */ "./src/redux/reducers/providers.js");
+/* harmony import */ var _redux_reducers_listing__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./redux/reducers/listing */ "./src/redux/reducers/listing.js");
+/* harmony import */ var _redux_reducers_topology__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./redux/reducers/topology */ "./src/redux/reducers/topology.js");
+/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Routes */ "./src/Routes.js");
+/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./App.scss */ "./src/App.scss");
+/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_App_scss__WEBPACK_IMPORTED_MODULE_17__);
 
 
 
@@ -1049,16 +1049,16 @@ function (_Component) {
       console.log('getStore()');
       console.log(App.getRegistry().getStore());
       App.getRegistry().register({
-        providers: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__["applyReducerHash"])(_redux_reducers_providers__WEBPACK_IMPORTED_MODULE_14__["default"], _redux_reducers_providers__WEBPACK_IMPORTED_MODULE_14__["defaultProvidersState"])
+        providers: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__["applyReducerHash"])(_redux_reducers_providers__WEBPACK_IMPORTED_MODULE_13__["default"], _redux_reducers_providers__WEBPACK_IMPORTED_MODULE_13__["defaultProvidersState"])
       });
       App.getRegistry().register({
-        listing: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__["applyReducerHash"])(_redux_reducers_listing__WEBPACK_IMPORTED_MODULE_15__["default"], _redux_reducers_listing__WEBPACK_IMPORTED_MODULE_15__["defaultListingState"])
+        listing: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__["applyReducerHash"])(_redux_reducers_listing__WEBPACK_IMPORTED_MODULE_14__["default"], _redux_reducers_listing__WEBPACK_IMPORTED_MODULE_14__["defaultListingState"])
       });
       App.getRegistry().register({
-        topology: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__["applyReducerHash"])(_redux_reducers_topology__WEBPACK_IMPORTED_MODULE_16__["default"], {})
+        topology: Object(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__["applyReducerHash"])(_redux_reducers_topology__WEBPACK_IMPORTED_MODULE_15__["default"], {})
       });
       App.getRegistry().register({
-        notifications: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11__["notifications"]
+        notifications: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__["notifications"]
       });
       insights.chrome.init();
 
@@ -1082,7 +1082,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11__["NotificationsPortal"], null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Routes__WEBPACK_IMPORTED_MODULE_12__["Routes"], {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationsPortal"], null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Routes__WEBPACK_IMPORTED_MODULE_16__["Routes"], {
         childProps: this.props
       }));
     }
@@ -1090,10 +1090,10 @@ function (_Component) {
     key: "getRegistry",
     value: function getRegistry() {
       if (!registry) {
-        registry = new _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_10__["ReducerRegistry"]({}, [Object(redux_promise_middleware__WEBPACK_IMPORTED_MODULE_9__["default"])(), Object(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_11__["notificationsMiddleware"])({
+        registry = new _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__["ReducerRegistry"]({}, [redux_thunk__WEBPACK_IMPORTED_MODULE_12__["default"], Object(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__["notificationsMiddleware"])({
           errorTitleKey: 'error',
           errorDescriptionKey: 'error'
-        }), redux_logger__WEBPACK_IMPORTED_MODULE_17___default.a]);
+        }), redux_logger__WEBPACK_IMPORTED_MODULE_11___default.a]);
       }
 
       return registry;

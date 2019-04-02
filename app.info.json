@@ -1,6 +1,6 @@
 {
   "app_name": "sources",
-  "src_hash": "c47a4ac305679b3fefe23c45b964c09c2eb3447a",
+  "src_hash": "9126ad80a376316f1476d1cfbd4bdac00975339f",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -18322,10 +18322,10 @@
       "from": "redux-logger@3.0.6",
       "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-3.0.6.tgz"
     },
-    "redux-promise-middleware": {
-      "version": "5.1.1",
-      "from": "redux-promise-middleware@5.1.1",
-      "resolved": "https://registry.npmjs.org/redux-promise-middleware/-/redux-promise-middleware-5.1.1.tgz"
+    "redux-thunk": {
+      "version": "2.3.0",
+      "from": "redux-thunk@2.3.0",
+      "resolved": "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz"
     },
     "sass-loader": {
       "version": "7.1.0",
@@ -18406,7 +18406,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "119",
-    "build_web_url": "https://travis-ci.org/ManageIQ/sources-ui/builds/514719751"
+    "build_number": "121",
+    "build_web_url": "https://travis-ci.org/ManageIQ/sources-ui/builds/514752252"
   }
 }

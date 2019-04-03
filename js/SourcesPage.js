@@ -368,7 +368,7 @@ function (_React$Component) {
           id: item.id + '_detail',
           parent: index * 2,
           cells: [item.expanded ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SourceExpandedView__WEBPACK_IMPORTED_MODULE_17__["default"], {
-            sourceId: item.id
+            source: item
           }) : 'collapsed content']
         }];
       }));

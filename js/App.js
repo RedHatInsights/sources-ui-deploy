@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4b5326500efd78342f65";
+/******/ 	var hotCurrentHash = "8b111219da780fe1ae33";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1044,8 +1044,6 @@ function (_Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this = this;
-
       console.log('getStore()');
       console.log(App.getRegistry().getStore());
       App.getRegistry().register({
@@ -1063,10 +1061,7 @@ function (_Component) {
       insights.chrome.init();
 
       try {
-        insights.chrome.identifyApp('topological-inventory');
-        this.appNav = insights.chrome.on('APP_NAVIGATION', function (event) {
-          return _this.props.history.push("/".concat(event.navId));
-        });
+        insights.chrome.identifyApp('sources');
       } catch (_exception) {
         this.appNav = null;
         console.warn('Failed to initialize chrome navigation.');
@@ -1585,7 +1580,7 @@ pathName.shift();
 var release = '/';
 
 if (pathName[0] === 'beta') {
-  release = "/".concat(pathName.shift());
+  release = "/".concat(pathName.shift(), "/");
 }
 
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {

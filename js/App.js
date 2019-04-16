@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "43f3d648fbc55a59fa22";
+/******/ 	var hotCurrentHash = "0955b53e562390c4c30e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2706,6 +2706,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @patternfly/react-icons */ "./node_modules/@patternfly/react-icons/dist/esm/index.js");
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _components_SSLFormLabel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/SSLFormLabel */ "./src/components/SSLFormLabel.js");
+
 
 
 
@@ -2734,8 +2736,39 @@ var fieldsToStep = function fieldsToStep(fields, stepName, nextStep) {
   });
 };
 
+var indexedStepName = function indexedStepName(base, index) {
+  return index === 0 ? base : "".concat(base, "_").concat(index);
+};
+
+var fieldsToSteps = function fieldsToSteps(fields, stepNamePrefix, lastStep) {
+  return Array.isArray(fields) ? fields.map(function (page, index) {
+    return fieldsToSteps(page, indexedStepName(stepNamePrefix, index), index < fields.length - 1 ? indexedStepName(stepNamePrefix, index + 1) : lastStep);
+  }) : fieldsToStep(fields, stepNamePrefix, lastStep);
+};
+
 var temporaryHardcodedSourceSchemas = {
-  openshift: {
+  openshift: [{
+    title: 'Obtain your login credentials',
+    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "To gather Red Hat OpenShift Container Platform data, your need to obtain the login token. ", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
+      href: "http://help.me"
+    }, "Learn more"), "."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextList"], {
+      component: "ul"
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
+      component: "li",
+      key: "1"
+    }, "Log in to the Red Hat OpenShift Container Platform cluster with an account that has access to the namespace"), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
+      component: "li",
+      key: "2"
+    }, "Run the following command to obtain your login token:", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("b", null, "\xA0# oc sa get-token -n management-infra management-admin")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
+      component: "li",
+      key: "3"
+    }, "Enter the token in below")))),
+    fields: [{
+      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXTAREA_FIELD,
+      name: 'token',
+      label: 'Token'
+    }]
+  }, {
     title: 'Enter OpenShift Container Platform information',
     description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "Provide OpenShift Container Platform URL and SSL certificate."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "All fields are required.")),
     fields: [{
@@ -2751,9 +2784,9 @@ var temporaryHardcodedSourceSchemas = {
       helperText: 'For example, https://myopenshiftcluster.mycompany.com',
       isRequired: true
     }, {
-      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXT_FIELD,
+      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXTAREA_FIELD,
       name: 'certificate_authority',
-      label: 'SSL Certificate',
+      label: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_SSLFormLabel__WEBPACK_IMPORTED_MODULE_7__["default"], null),
       condition: {
         when: 'verify_ssl',
         is: true
@@ -2762,13 +2795,8 @@ var temporaryHardcodedSourceSchemas = {
       component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].CHECKBOX,
       name: 'verify_ssl',
       label: 'Verify SSL'
-    }, {
-      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXT_FIELD,
-      name: 'token',
-      label: 'Token',
-      type: 'password'
     }]
-  },
+  }],
   amazon: {
     title: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("span", null, "Configure account access"), "\xA0", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["Popover"], {
       position: "bottom",
@@ -2969,8 +2997,8 @@ var summaryStep = function summaryStep() {
 
 var sourceTypeSteps = function sourceTypeSteps(sourceTypes) {
   return sourceTypes.map(function (t) {
-    return fieldsToStep(sourceTypeSchema(t), t.name, 'summary');
-  });
+    return fieldsToSteps(sourceTypeSchema(t), t.name, 'summary');
+  }).flat(1);
 };
 
 var endpointToUrl = function endpointToUrl(endpoint) {
@@ -3009,8 +3037,8 @@ var initialValues = function initialValues(source) {
 function sourceEditForm(sourceTypes, source) {
   /* editing form:
    * 1st page: editable name + non-editable source type
-   * 2nd page: provider specific
-   * 3rd page: summary */
+   * 2nd, 3rd... page: provider specific
+   * last page: summary */
   var sourceType = lodash_find__WEBPACK_IMPORTED_MODULE_3___default()(sourceTypes, {
     id: source.source_type_id
   });
@@ -3025,7 +3053,7 @@ function sourceEditForm(sourceTypes, source) {
       fields: [{
         component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].WIZARD,
         name: 'wizard',
-        fields: [firstStepEdit(sourceTypes, typeName)].concat(sourceType && fieldsToStep(sourceTypeSchema(sourceType), typeName, 'summary'), summaryStep())
+        fields: [firstStepEdit(sourceTypes, typeName)].concat(sourceType && fieldsToSteps(sourceTypeSchema(sourceType), typeName, 'summary'), summaryStep())
       }]
     }
   };
@@ -3840,6 +3868,42 @@ var topologyData = {
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (topologyData);
+
+/***/ }),
+
+/***/ "./src/components/SSLFormLabel.js":
+/*!****************************************!*\
+  !*** ./src/components/SSLFormLabel.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @patternfly/react-icons */ "./node_modules/@patternfly/react-icons/dist/esm/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+
+
+
+
+var SSLFormLabel = function SSLFormLabel() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "SSL Certificate\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    onClick: function onClick(e) {
+      return e.preventDefault();
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Popover"], {
+    maxWidth: "50%",
+    bodyContent: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
+    }, "You can obtain your OpenShift Container Platform provider\u2019s CA certificate for all endpoints (default, metrics, alerts) from", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "/etc/origin/master/ca.crt"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
+    }, "Paste the output (a block of text starting with --BEGIN CERTIFICATE--) into the Trusted CA Certificates field."))
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_1__["QuestionCircleIcon"], null))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SSLFormLabel);
 
 /***/ }),
 

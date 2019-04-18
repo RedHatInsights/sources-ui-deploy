@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "222f96791d9f538a2788";
+/******/ 	var hotCurrentHash = "9173ab5b8c43c775ddf4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -4805,32 +4805,13 @@ function (_Component) {
       _this.props.pageAndSize(1, count);
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this)), "renderMainContentOld", function () {
-      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Card"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_SourcesFilter__WEBPACK_IMPORTED_MODULE_16__["default"], {
-        columns: lodash_filter__WEBPACK_IMPORTED_MODULE_14___default()(_views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_20__["sourcesViewDefinition"].columns, function (c) {
-          return c.searchable;
-        }),
-        onFilter: _this.onFilter,
-        onFilterSelect: _this.onFilterSelect
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_SourcesSimpleView__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        columns: _views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_20__["sourcesViewDefinition"].columns
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["CardFooter"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_11__["Pagination"], {
-        itemsPerPage: _this.state.itemsPerPage,
-        page: _this.state.onPage,
-        direction: "up",
-        onSetPage: _this.onSetPage,
-        onPerPageSelect: _this.onPerPageSelect,
-        numberOfItems: _this.props.numberOfEntities || 0
-      })));
-    });
-
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this)), "renderMainContent", function () {
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_11__["TableToolbar"], {
         xresults: _this.props.numberOfEntities
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Split"], {
         gutter: "md",
         style: {
-          width: '100%'
+          flexGrow: 1
         }
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_SourcesFilter__WEBPACK_IMPORTED_MODULE_16__["default"], {
         columns: lodash_filter__WEBPACK_IMPORTED_MODULE_14___default()(_views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_20__["sourcesViewDefinition"].columns, function (c) {
@@ -4838,13 +4819,15 @@ function (_Component) {
         }),
         onFilter: _this.onFilter,
         onFilterSelect: _this.onFilterSelect
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], {
-        isMain: true
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Link"], {
         to: _Routes__WEBPACK_IMPORTED_MODULE_21__["paths"].sourcesNew
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         variant: "primary"
-      }, " Add a New Source "))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_11__["Pagination"], {
+      }, " Add a New Source "))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], {
+        style: {
+          flexGrow: 1
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_11__["Pagination"], {
         itemsPerPage: _this.state.itemsPerPage,
         page: _this.state.onPage,
         direction: "up",

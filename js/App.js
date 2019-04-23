@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7c993787db7b554b835a";
+/******/ 	var hotCurrentHash = "6cd7c2ed7b6930d6ca71";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -3448,12 +3448,12 @@ function (_Component) {
 /*!************************************!*\
   !*** ./src/Utilities/Constants.js ***!
   \************************************/
-/*! exports provided: TOPOLOGICAL_INVENTORY_API_BASE */
+/*! exports provided: SOURCES_API_BASE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOPOLOGICAL_INVENTORY_API_BASE", function() { return TOPOLOGICAL_INVENTORY_API_BASE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SOURCES_API_BASE", function() { return SOURCES_API_BASE; });
 /* If BASE_PATH ends with '/', append just the version. This is useful for local debugging:
  *
  * BASE_PATH=http://lucifer.usersys.redhat.com:4000/api/ npm run start
@@ -3467,7 +3467,7 @@ var calculateApiBase = function calculateApiBase(b) {
   return b.endsWith('/') && "".concat(b, "v1.0") || "".concat(b, "/sources/v1.0");
 };
 
-var TOPOLOGICAL_INVENTORY_API_BASE = calculateApiBase("/api" || '');
+var SOURCES_API_BASE = calculateApiBase("/api" || '');
 
 /***/ }),
 
@@ -3699,41 +3699,51 @@ var processList = function processList(list, options) {
 /*!*****************************!*\
   !*** ./src/api/entities.js ***!
   \*****************************/
-/*! exports provided: getApiInstance, getEntities, doRemoveSource, doLoadSourceForEdit, doCreateSource, doUpdateSource */
+/*! exports provided: getSourcesApi, getEntities, doRemoveSource, doLoadSourceForEdit, doCreateSource, doUpdateSource */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getApiInstance", function() { return getApiInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSourcesApi", function() { return getSourcesApi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEntities", function() { return getEntities; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doRemoveSource", function() { return doRemoveSource; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doLoadSourceForEdit", function() { return doLoadSourceForEdit; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doCreateSource", function() { return doCreateSource; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doUpdateSource", function() { return doUpdateSource; });
-/* harmony import */ var _Utilities_Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Utilities/Constants */ "./src/Utilities/Constants.js");
-/* harmony import */ var _views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/sourcesViewDefinition */ "./src/views/sourcesViewDefinition.js");
-/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/find */ "./node_modules/lodash/find.js");
-/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _redhat_cloud_services_sources_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redhat-cloud-services/sources-client */ "./node_modules/@redhat-cloud-services/sources-client/dist/index.js");
+/* harmony import */ var _redhat_cloud_services_sources_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_redhat_cloud_services_sources_client__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/find */ "./node_modules/lodash/find.js");
+/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/sourcesViewDefinition */ "./src/views/sourcesViewDefinition.js");
+/* harmony import */ var _Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Utilities/Constants */ "./src/Utilities/Constants.js");
 
 
 
-/*global require*/
 
-var TopologicalInventory = __webpack_require__(/*! @manageiq/topological_inventory */ "./node_modules/@manageiq/topological_inventory/dist/main.js");
 
+
+var axiosInstance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create();
+axiosInstance.interceptors.response.use(function (response) {
+  return response.data || response;
+});
+axiosInstance.interceptors.response.use(null, function (error) {
+  throw _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, error.response);
+});
 var apiInstance;
-function getApiInstance() {
+function getSourcesApi() {
   if (apiInstance) {
     return apiInstance;
   }
 
-  apiInstance = new TopologicalInventory.DefaultApi();
-  var defaultClient = TopologicalInventory.ApiClient.instance;
-  defaultClient.basePath = _Utilities_Constants__WEBPACK_IMPORTED_MODULE_0__["TOPOLOGICAL_INVENTORY_API_BASE"];
+  apiInstance = new _redhat_cloud_services_sources_client__WEBPACK_IMPORTED_MODULE_2__["DefaultApi"](undefined, _Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__["SOURCES_API_BASE"], axiosInstance);
   return apiInstance;
 }
 function getEntities(_pagination, _filter) {
-  return fetch(_Utilities_Constants__WEBPACK_IMPORTED_MODULE_0__["TOPOLOGICAL_INVENTORY_API_BASE"] + _views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_1__["sourcesViewDefinition"].url).then(function (r) {
+  return fetch(_Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__["SOURCES_API_BASE"] + _views_sourcesViewDefinition__WEBPACK_IMPORTED_MODULE_4__["sourcesViewDefinition"].url).then(function (r) {
     if (r.ok || r.type === 'opaque') {
       return r.json();
     }
@@ -3742,7 +3752,7 @@ function getEntities(_pagination, _filter) {
   });
 }
 function doRemoveSource(sourceId) {
-  return getApiInstance().deleteSource(sourceId).then(function (sourceDataOut) {
+  return getSourcesApi().deleteSource(sourceId).then(function (sourceDataOut) {
     console.log('API call deleteSource returned data: ', sourceDataOut);
   }, function (_error) {
     console.error('Source removal failed.');
@@ -3752,9 +3762,9 @@ function doRemoveSource(sourceId) {
   });
 }
 function doLoadSourceForEdit(sourceId) {
-  return getApiInstance().showSource(sourceId).then(function (sourceData) {
+  return getSourcesApi().showSource(sourceId).then(function (sourceData) {
     console.log('API call showSource returned: ', sourceData);
-    return getApiInstance().listSourceEndpoints(sourceId, {}).then(function (endpoints) {
+    return getSourcesApi().listSourceEndpoints(sourceId, {}).then(function (endpoints) {
       console.log('API call listSourceEndpoints returned: ', endpoints); // we take just the first endpoint
 
       var endpoint = endpoints && endpoints.data && endpoints.data[0];
@@ -3765,7 +3775,7 @@ function doLoadSourceForEdit(sourceId) {
       }
 
       sourceData.endpoint = endpoint;
-      return getApiInstance().listEndpointAuthentications(endpoint.id, {}).then(function (authentications) {
+      return getSourcesApi().listEndpointAuthentications(endpoint.id, {}).then(function (authentications) {
         console.log('API call listEndpointAuthentications returned: ', authentications); // we take just the first authentication
 
         var authentication = authentications && authentications.data && authentications.data[0];
@@ -3811,11 +3821,11 @@ var urlOrHost = function urlOrHost(formData) {
 function doCreateSource(formData, sourceTypes) {
   var sourceData = {
     name: formData.source_name,
-    source_type_id: lodash_find__WEBPACK_IMPORTED_MODULE_2___default()(sourceTypes, {
+    source_type_id: lodash_find__WEBPACK_IMPORTED_MODULE_3___default()(sourceTypes, {
       name: formData.source_type
     }).id
   };
-  return getApiInstance().createSource(sourceData).then(function (sourceDataOut) {
+  return getSourcesApi().createSource(sourceData).then(function (sourceDataOut) {
     var _urlOrHost = urlOrHost(formData),
         scheme = _urlOrHost.scheme,
         host = _urlOrHost.host,
@@ -3832,13 +3842,13 @@ function doCreateSource(formData, sourceTypes) {
       verify_ssl: formData.verify_ssl,
       certificate_authority: formData.certificate_authority
     };
-    return getApiInstance().createEndpoint(endpointData).then(function (endpointDataOut) {
+    return getSourcesApi().createEndpoint(endpointData).then(function (endpointDataOut) {
       var authenticationData = {
         resource_id: parseInt(endpointDataOut.id, 10),
         resource_type: 'Endpoint',
         password: formData.token || formData.password
       };
-      return getApiInstance().createAuthentication(authenticationData).then(function (authenticationDataOut) {
+      return getSourcesApi().createAuthentication(authenticationData).then(function (authenticationDataOut) {
         return authenticationDataOut;
       }, function (_error) {
         console.error('Authentication creation failure.');
@@ -3860,7 +3870,7 @@ function doCreateSource(formData, sourceTypes) {
   });
 }
 function doUpdateSource(source, formData) {
-  var inst = getApiInstance();
+  var inst = getSourcesApi();
   var sourceData = {
     name: formData.source_name
   };
@@ -3972,7 +3982,7 @@ __webpack_require__.r(__webpack_exports__);
  // import { getApiInstance } from './entities.js';
 
 function doLoadSourceTypes() {
-  return fetch(_Utilities_Constants__WEBPACK_IMPORTED_MODULE_0__["TOPOLOGICAL_INVENTORY_API_BASE"] + '/source_types/').then(function (r) {
+  return fetch(_Utilities_Constants__WEBPACK_IMPORTED_MODULE_0__["SOURCES_API_BASE"] + '/source_types/').then(function (r) {
     return r.json();
   }).then(function (data) {
     return data.data;

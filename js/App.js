@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6cd7c2ed7b6930d6ca71";
+/******/ 	var hotCurrentHash = "9facf5ca488d4c1773a2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -3005,7 +3005,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var compileSourcesComboOptions = function compileSourcesComboOptions(sourceTypes) {
   return [{
-    label: 'Please Choose'
+    label: 'Choose a type'
   }].concat(sourceTypes.map(function (t) {
     return {
       value: t.name,
@@ -3035,10 +3035,10 @@ var fieldsToSteps = function fieldsToSteps(fields, stepNamePrefix, lastStep) {
 
 var temporaryHardcodedSourceSchemas = {
   openshift: [{
-    title: 'Obtain your login credentials',
-    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "To gather Red Hat OpenShift Container Platform data, your need to obtain the login token. ", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
-      href: "http://help.me"
-    }, "Learn more"), "."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextList"], {
+    title: 'Add source credentials',
+    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, {
+      key: "1"
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "Add credentials that enable communication with this source. This source requires the login token."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "To collect data from a Red Hat OpenShift Container Platform source,"), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextList"], {
       component: "ul"
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
       component: "li",
@@ -3046,10 +3046,10 @@ var temporaryHardcodedSourceSchemas = {
     }, "Log in to the Red Hat OpenShift Container Platform cluster with an account that has access to the namespace"), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
       component: "li",
       key: "2"
-    }, "Run the following command to obtain your login token:", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("b", null, "\xA0# oc sa get-token -n management-infra management-admin")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
+    }, "Run the following command to obtain your login token: ", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("b", null, "\xA0# oc sa get-token -n management-infra management-admin")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextListItem"], {
       component: "li",
       key: "3"
-    }, "Enter the token in below")))),
+    }, "Copy the token and paste it in the following field.")))),
     fields: [{
       component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXTAREA_FIELD,
       name: 'token',
@@ -3057,7 +3057,9 @@ var temporaryHardcodedSourceSchemas = {
     }]
   }, {
     title: 'Enter OpenShift Container Platform information',
-    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "Provide OpenShift Container Platform URL and SSL certificate."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "All fields are required.")),
+    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, {
+      key: "2"
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "Provide OpenShift Container Platform URL and SSL certificate.")),
     fields: [{
       component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXT_FIELD,
       name: 'role',
@@ -3071,6 +3073,10 @@ var temporaryHardcodedSourceSchemas = {
       helperText: 'For example, https://myopenshiftcluster.mycompany.com',
       isRequired: true
     }, {
+      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].CHECKBOX,
+      name: 'verify_ssl',
+      label: 'Verify SSL'
+    }, {
       component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXTAREA_FIELD,
       name: 'certificate_authority',
       label: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_SSLFormLabel__WEBPACK_IMPORTED_MODULE_7__["default"], null),
@@ -3078,14 +3084,11 @@ var temporaryHardcodedSourceSchemas = {
         when: 'verify_ssl',
         is: true
       }
-    }, {
-      component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].CHECKBOX,
-      name: 'verify_ssl',
-      label: 'Verify SSL'
     }]
   }],
   amazon: {
     title: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("span", null, "Configure account access"), "\xA0", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["Popover"], {
+      "aria-label": "Help text",
       position: "bottom",
       maxWidth: "50%",
       bodyContent: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", null, "Red Had recommends using the Power User AWS Identity and Access Management (IAM) policy when adding an AWS account as a source. This Policy allows the user full access to API functionality and AWS services for user administration.", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("br", null), "Create an access key in the ", react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("b", null, "Security Credentials"), " area of your AWS user account. To add your account as a source, enter the access key ID and secret access key to act as your user ID and password.")),
@@ -3093,7 +3096,7 @@ var temporaryHardcodedSourceSchemas = {
         href: "http://foo.bar"
       }, "Learn more")
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_5__["QuestionCircleIcon"], null))),
-    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "Create an access key in your AWS user account and enter the details below."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "For sufficient access and security, Red Har recommends using the Power User IAM polocy for your AWS user account."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "All fields are required.")),
+    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "Create an access key in your AWS user account and enter the details below."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "For sufficient access and security, Red Hat recommends using the Power User IAM polocy for your AWS user account."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", null, "All fields are required.")),
     fields: [{
       component: _data_driven_forms_react_form_renderer__WEBPACK_IMPORTED_MODULE_1__["componentTypes"].TEXT_FIELD,
       name: 'role',
@@ -3279,8 +3282,8 @@ var summaryStep = function summaryStep() {
     }],
     stepKey: 'summary',
     name: 'summary',
-    title: 'Confirm source details',
-    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "Confirm the details of your source or click Back to revise.")
+    title: 'Review source details',
+    description: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["TextContent"], null, "Review source details and click Add source to complete source creation. Click Back to revise.")
   };
 };
 
@@ -4126,6 +4129,7 @@ var SSLFormLabel = function SSLFormLabel() {
       return e.preventDefault();
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Popover"], {
+    "aria-label": "Help text",
     maxWidth: "50%",
     bodyContent: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
@@ -4194,9 +4198,8 @@ var SourceEditModal = function SourceEditModal(props) {
   }
 
   var form = editorNew ? Object(_SmartComponents_ProviderPage_providerForm__WEBPACK_IMPORTED_MODULE_6__["sourceNewForm"])(props.sourceTypes) : Object(_SmartComponents_ProviderPage_providerForm__WEBPACK_IMPORTED_MODULE_6__["sourceEditForm"])(props.sourceTypes, props.source);
-  console.log('Form schema: ', form);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Modal"], {
-    title: editorNew ? 'Add a Source' : 'Edit Source',
+    title: editorNew ? 'Add a source' : 'Edit Source',
     isOpen: true,
     onClose: props.history.goBack,
     isLarge: true
@@ -4557,7 +4560,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var SourcesEmptyState = function SourcesEmptyState() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["EmptyState"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["EmptyStateIcon"], {
-    icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__["CubesIcon"]
+    icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__["WrenchIcon"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__["Title"], {
     headingLevel: "h5",
     size: "lg"
@@ -4568,7 +4571,7 @@ var SourcesEmptyState = function SourcesEmptyState() {
       marginTop: 'var(--pf-c-empty-state--c-button--MarginTop)'
     },
     variant: "primary"
-  }, "Add a Source"))))));
+  }, "Add a source"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SourcesEmptyState);
@@ -4808,14 +4811,14 @@ function (_React$Component) {
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "renderActions", function () {
       return [{
-        title: 'Delete',
-        onClick: function onClick(_ev, i) {
-          return _this.props.history.push("/remove/".concat(_this.sourceIndexToId(i)));
-        }
-      }, {
         title: 'Edit',
         onClick: function onClick(_ev, i) {
           return _this.props.history.push("/edit/".concat(_this.sourceIndexToId(i)));
+        }
+      }, {
+        title: 'Delete',
+        onClick: function onClick(_ev, i) {
+          return _this.props.history.push("/remove/".concat(_this.sourceIndexToId(i)));
         }
       }];
     });
@@ -4825,7 +4828,7 @@ function (_React$Component) {
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "dateFormatter", function (str) {
-      return moment__WEBPACK_IMPORTED_MODULE_17___default()(new Date(Date.parse(str))).format('DD MMM YYYY h:mm');
+      return moment__WEBPACK_IMPORTED_MODULE_17___default()(new Date(Date.parse(str))).utc().format('DD MMM YYYY, hh:mm UTC');
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "itemToCells", function (item) {
@@ -5122,7 +5125,7 @@ function (_Component) {
         to: _Routes__WEBPACK_IMPORTED_MODULE_21__["paths"].sourcesNew
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         variant: "primary"
-      }, " Add a New Source "))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], {
+      }, " Add a source "))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["SplitItem"], {
         style: {
           flexGrow: 1
         }
@@ -5909,7 +5912,7 @@ var sourcesViewDefinition = {
     formatter: 'sourceTypeFormatter'
   }, // this column does not actually exist in the API, but is required by the design;
   {
-    title: 'Application',
+    title: null,
     value: 'applications',
     searchable: false
   }, //{ title: 'Tags', value: 'tags', },

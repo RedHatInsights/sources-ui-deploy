@@ -1,3 +1,4 @@
+
 button:focus {
   outline: none; }
 
@@ -19,4 +20,11 @@ button:focus {
   .sources-placeholder-table td {
     display: block;
     padding: 10px; }
+
+.ins-c-sources__dialog--warning .ins-c-source__delete-icon {
+  color: var(--pf-global--danger-color--100);
+  padding: var(--pf-global--spacer--md); }
+
+.ins-c-sources__dialog--warning p {
+  margin-top: var(--pf-global--spacer--md); }
 

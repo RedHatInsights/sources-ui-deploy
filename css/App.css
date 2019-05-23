@@ -36,6 +36,10 @@ button:focus {
   .ins-c-sources__dialog--warning .ins-c-source__dialog--flex .ins-c-source__dialog--text {
     flex: 10; }
 
+.ins-c-sources__dialog--spinnerContainer {
+  min-height: 64px;
+  text-align: center; }
+
 /* temporary styling for wizard buttons in the form player */
 .wizard-button-toolbar {
   justify-content: flex-start !important; }

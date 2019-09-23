@@ -1,11 +1,11 @@
 {
   "app_name": "sources",
-  "src_hash": "971314ce86bdf43fe164a29c953265d36601996b",
+  "src_hash": "16418623cbd957f34f63cdfe3f3c89c1a0f2b1ce",
   "src_tag": "",
   "src_branch": "qa-stable",
   "travis": {
     "event_type": "push",
-    "build_number": "387",
-    "build_web_url": "https://travis-ci.org/ManageIQ/sources-ui/builds/572906111"
+    "build_number": "442",
+    "build_web_url": "https://travis-ci.org/ManageIQ/sources-ui/builds/588645800"
   }
 }

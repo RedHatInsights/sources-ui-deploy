@@ -14377,3 +14377,6 @@ button.ins-c-tag-count {
       cursor: not-allowed; }
   .ins-c-sources__wizard--card .disabled {
     z-index: -1; }
+
+.pf-c-form__helper-text.pf-m-disabled {
+  color: var(--pf-global--disabled-color--100); }

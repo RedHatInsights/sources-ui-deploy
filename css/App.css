@@ -27,3 +27,6 @@ button:focus {
 .ins-c-sources__row-vertical-centered td {
   vertical-align: middle !important; }
 
+.ins-c-sources__help-cursor:hover {
+  cursor: help; }
+

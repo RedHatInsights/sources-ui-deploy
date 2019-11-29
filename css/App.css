@@ -11,7 +11,8 @@ button:focus {
 .sources-placeholder-table {
   background: white;
   width: 100%;
-  border: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   border-collapse: collapse; }
   .sources-placeholder-table td {
     display: block;

@@ -24535,3 +24535,9 @@ label.pf-c-check, .pf-c-check__label,
 
 .pf-c-form__helper-text.pf-m-disabled {
   color: var(--pf-global--disabled-color--100); }
+
+.list-align-top {
+  margin-top: calc(var(--pf-global--spacer--xl) * -1); }
+
+.list-align-left {
+  margin-left: calc(var(--pf-global--spacer--xl) * -1); }

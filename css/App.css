@@ -38,8 +38,6 @@ button:focus {
   left: 0;
   height: 100%;
   width: 100%; }
-  .ins-c-sources__edit-field-group.clickable {
-    cursor: pointer; }
   .ins-c-sources__edit-field-group .ins-c-sources__edit-field-group-text-content {
     display: table-cell;
     vertical-align: middle;
@@ -66,4 +64,7 @@ button:focus {
 
 .ins-c-sources__availability-unknown {
   color: var(--pf-global--icon--Color--light); }
+
+.clickable {
+  cursor: pointer; }
 

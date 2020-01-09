@@ -1,11 +1,11 @@
 {
   "app_name": "sources",
-  "src_hash": "f0ecdf4bc728905d6df74c077bfa917367b31141",
+  "src_hash": "7e2cf893aa7a9e1cfa3cf8de9555a891a0a22c55",
   "src_tag": "",
   "src_branch": "master",
   "travis": {
     "event_type": "push",
-    "build_number": "843",
-    "build_web_url": "https://travis-ci.org/RedHatInsights/sources-ui/builds/634730631"
+    "build_number": "846",
+    "build_web_url": "https://travis-ci.org/RedHatInsights/sources-ui/builds/634789838"
   }
 }

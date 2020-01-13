@@ -24684,6 +24684,10 @@ label.pf-c-check, .pf-c-check__label,
       cursor: not-allowed; }
   .ins-c-sources__wizard--card .disabled {
     z-index: -1; }
+  .ins-c-sources__wizard--card .text-elipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
 
 .pf-c-form__helper-text.pf-m-disabled {
   color: var(--pf-global--disabled-color--100); }

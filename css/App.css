@@ -11,7 +11,8 @@ button:focus {
 .sources-placeholder-table {
   background: white;
   width: 100%;
-  border: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   border-collapse: collapse; }
   .sources-placeholder-table td {
     display: block;
@@ -29,4 +30,50 @@ button:focus {
 
 .ins-c-sources__help-cursor:hover {
   cursor: help; }
+
+.ins-c-sources__edit-field-group {
+  min-height: 36px;
+  display: table;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+  .ins-c-sources__edit-field-group .ins-c-sources__edit-field-group-text-content {
+    display: table-cell;
+    vertical-align: middle;
+    color: var(--pf-global--disabled-color--100); }
+    .ins-c-sources__edit-field-group .ins-c-sources__edit-field-group-text-content.clickable:hover {
+      color: var(--pf-global--Color--100); }
+
+.ins-c-sources__edit-field-value {
+  display: inline-block;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle; }
+
+.ins-c-sources__availability-ok {
+  color: var(--pf-global--success-color--100); }
+
+.ins-c-sources__availability-partially {
+  color: var(--pf-global--warning-color--100); }
+
+.ins-c-sources__availability-not-ok {
+  color: var(--pf-global--danger-color--100); }
+
+.ins-c-sources__availability-unknown {
+  color: var(--pf-global--icon--Color--light); }
+
+.clickable {
+  cursor: pointer; }
+
+.ins-c-sources__pagination-loader-wrapper {
+  width: 300px; }
+
+.ins-c-sources__icon {
+  min-width: 32px;
+  min-height: 32px;
+  width: 32px;
+  height: 32px; }
 

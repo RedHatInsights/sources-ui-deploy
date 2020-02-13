@@ -3559,12 +3559,15 @@ button.ins-c-tag-count {
     padding-bottom: var(--pf-global--spacer--sm); } }
 
 .ins-c-inventory__culling-warning {
-  color: var(--pf-global--warning-color--100);
-  font-weight: var(--pf-global--FontWeight--bold); }
+  color: var(--pf-global--warning-color--100); }
 
 .ins-c-inventory__culling-danger {
-  color: var(--pf-global--danger-color--100);
+  color: var(--pf-global--danger-color--100); }
+
+.ins-c-inventory__culling-danger, .ins-c-inventory__culling-warning {
   font-weight: var(--pf-global--FontWeight--bold); }
+  .ins-c-inventory__culling-danger svg, .ins-c-inventory__culling-warning svg {
+    margin-right: var(--pf-global--spacer--sm); }
 .notifications-portal {
   position: fixed;
   top: 0;

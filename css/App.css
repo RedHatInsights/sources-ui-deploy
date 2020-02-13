@@ -1650,7 +1650,9 @@ Also for enableFlip, need to make arrow aware of parent x-placement attribute in
   --pf-c-pagination__nav-page-select--PaddingLeft: var(--pf-global--spacer--md);
   --pf-c-pagination__nav-page-select--PaddingRight: var(--pf-global--spacer--md);
   --pf-c-pagination__nav-page-select--child--MarginRight: var(--pf-global--spacer--xs);
-  --pf-c-pagination__nav-page-select--c-form-control--Width: 3rem;
+  --pf-c-pagination__nav-page-select--c-form-control--width-base: 3.5ch;
+  --pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;
+  --pf-c-pagination__nav-page-select--c-form-control--Width: calc(var(--pf-c-pagination__nav-page-select--c-form-control--width-base) + (var(--pf-c-pagination__nav-page-select--c-form-control--width-chars) * 1ch));
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -3746,7 +3748,7 @@ button:focus {
   --pf-c-badge--BackgroundColor: var(--pf-c-badge--m-unread--BackgroundColor); }
 
 .pf-c-popover {
-  --pf-c-popover--MinWidth: calc(var(--pf-c-popover--c-button--sibling--PaddingRight) + 6.25rem);
+  --pf-c-popover--MinWidth: calc(var(--pf-c-popover--c-button--sibling--PaddingRight) + 18.75rem);
   --pf-c-popover--MaxWidth: calc(var(--pf-c-popover--c-button--sibling--PaddingRight) + 18.75rem);
   --pf-c-popover--BoxShadow: var(--pf-global--BoxShadow--md);
   --pf-c-popover__content--BackgroundColor: var(--pf-global--BackgroundColor--100);
@@ -3843,7 +3845,8 @@ button:focus {
   --pf-c-title--m-md--LineHeight: var(--pf-global--LineHeight--md);
   --pf-c-title--m-md--FontSize: var(--pf-global--FontSize--md);
   --pf-c-title--m-md--FontWeight: var(--pf-global--FontWeight--semi-bold);
-  font-family: var(--pf-c-title--FontFamily); }
+  font-family: var(--pf-c-title--FontFamily);
+  word-break: break-word; }
 
 .pf-c-title.pf-m-4xl {
   font-size: var(--pf-c-title--m-4xl--FontSize);

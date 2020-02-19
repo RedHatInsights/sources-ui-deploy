@@ -19,9 +19,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ ".
 
 var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var _stack = _interopRequireDefault(__webpack_require__(/*! @patternfly/react-styles/css/layouts/Stack/stack */ "./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js"));
+var _stack = _interopRequireDefault(__webpack_require__(/*! @patternfly/react-styles/css/layouts/Stack/stack */ "./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js"));
 
-var _reactStyles = __webpack_require__(/*! @patternfly/react-styles */ "./node_modules/@patternfly/react-styles/dist/esm/index.js");
+var _reactStyles = __webpack_require__(/*! @patternfly/react-styles */ "./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/dist/esm/index.js");
 
 var _gutters = __webpack_require__(/*! ../../styles/gutters */ "./node_modules/@patternfly/react-core/dist/js/styles/gutters.js");
 
@@ -65,15 +65,15 @@ Stack.propTypes = {
 
 /***/ }),
 
-/***/ "./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css ***!
-  \***************************************************************************/
+/***/ "./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(/*! ../../../../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../../../css-loader/dist/cjs.js!../../../../../sass-loader/dist/cjs.js!./stack.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css");
+var api = __webpack_require__(/*! ../../../../../../../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../../../../../../css-loader/dist/cjs.js!../../../../../../../../sass-loader/dist/cjs.js!./stack.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css");
 
             content = content.__esModule ? content.default : content;
 
@@ -96,17 +96,17 @@ module.exports = exported;
 
 /***/ }),
 
-/***/ "./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.js ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! ./stack.css */ "./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css");
+__webpack_require__(/*! ./stack.css */ "./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css");
 exports.default = {
     stack: 'pf-l-stack',
     stackItem: 'pf-l-stack__item',
@@ -119,15 +119,15 @@ exports.default = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css":
-/*!********************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css ***!
-  \********************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/@patternfly/react-core/node_modules/@patternfly/react-styles/css/layouts/Stack/stack.css ***!
+  \********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, ".pf-l-stack {\n  --pf-l-stack--m-gutter--MarginBottom: var(--pf-global--gutter);\n  --pf-l-stack--m-gutter--md--MarginBottom: var(--pf-global--gutter--md);\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n@media screen and (max-width: 768px) {\n  .pf-l-stack {\n    --pf-l-stack--m-gutter--MarginBottom: var(--pf-l-stack--m-gutter--md--MarginBottom); } }\n\n.pf-l-stack__item.pf-m-fill {\n  flex-grow: 1; }\n\n.pf-l-stack.pf-m-gutter > *:not(:last-child) {\n  margin-bottom: var(--pf-l-stack--m-gutter--MarginBottom); }\n", ""]);

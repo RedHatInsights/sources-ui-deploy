@@ -1,7 +1,10 @@
 {
     "sources": {
         "entry": [
-            "/apps/sources/sources.dcb7f02e83c2bb329fef.js"
+            "/apps/sources/sources.d6162559781f3d2dba97.js"
+        ],
+        "modules": [
+            "/apps/sources/js/374.ff24ca4d32a36af7d593.js"
         ]
     }
 }

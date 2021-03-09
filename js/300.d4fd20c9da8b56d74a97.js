@@ -1,0 +1,2 @@
+(self.webpackChunksources_ui=self.webpackChunksources_ui||[]).push([[300],{90300:(e,n,s)=>{"use strict";s.d(n,{Z:()=>i});var t=s(319),u=s.n(t),c=s(61570);const i=function(e,n){var s,t=null===(s=e.find((function(e){return e.name===n})))||void 0===s?void 0:s.schema.authentication.find((function(e){var n=e.is_superkey,s=e.type;return n||"access_key_secret_key"===s})),i=(0,c.gF)(n,t.type);return[].concat(u()((0,c.YD)(n,t.type)),u()((0,c.Ow)((0,c.sM)(t.fields,i),n,t.type)))}}}]);
+//# sourceMappingURL=300.d4fd20c9da8b56d74a97.js.map

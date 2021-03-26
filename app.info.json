@@ -1,12 +1,12 @@
 {
   "app_name": "sources",
-  "src_hash": "9046241cae85c1689c7dca06a332e63995b197b3",
+  "src_hash": "2fd2b4cac4959916f5142218acf771fab98dfa17",
   "src_tag": "",
   "src_branch": "master",
   "patternfly_dependencies": ["@patternfly/react-core@4.101.3","@patternfly/react-icons@4.9.5","@patternfly/react-table@4.23.14"],
   "travis": {
     "event_type": "push",
-    "build_number": "2422",
-    "build_web_url": "https://travis-ci.com/RedHatInsights/sources-ui/builds/221281117"
+    "build_number": "2424",
+    "build_web_url": "https://travis-ci.com/RedHatInsights/sources-ui/builds/221288256"
   }
 }

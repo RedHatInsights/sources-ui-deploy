@@ -1,2 +1,0 @@
-(self.webpackChunksources_ui=self.webpackChunksources_ui||[]).push([[1609],{41609:(e,r,t)=>{var n=t(280),u=t(64160),i=t(35694),o=t(1469),f=t(98612),s=t(44144),c=t(25726),p=t(36719),l=Object.prototype.hasOwnProperty;e.exports=function(e){if(null==e)return!0;if(f(e)&&(o(e)||"string"==typeof e||"function"==typeof e.splice||s(e)||p(e)||i(e)))return!e.length;var r=u(e);if("[object Map]"==r||"[object Set]"==r)return!e.size;if(c(e))return!n(e).length;for(var t in e)if(l.call(e,t))return!1;return!0}}}]);
-//# sourceMappingURL=1609.f6a0eb07a91d9d1ba2ef.js.map

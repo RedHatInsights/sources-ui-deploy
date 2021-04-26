@@ -1,2 +1,2 @@
 (self.webpackChunksources_ui=self.webpackChunksources_ui||[]).push([[6845],{96845:(e,r,n)=>{"use strict";n.d(r,{S:()=>c,Z:()=>i});var t=n(79829),o=n(27361),u=n.n(o),c=function(e){var r,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:void 0;return e||(r="Undefined error"),r||"string"!=typeof e||(r=e),r||(r=u()(e,"errors[0].detail",JSON.stringify(e,null,2))),n?(0,t.Rj)().deleteSource(n).then((function(){return r})).catch((function(e){var n=u()(e,"errors[0].detail",JSON.stringify(e,null,2));return"".concat(r,". The source was not removed, try remove it later: ").concat(n)})):r};const i=c}}]);
-//# sourceMappingURL=../sourcemaps/6845.e680398a85cc6ce20af2.js.map
+//# sourceMappingURL=../sourcemaps/6845.6f52bbb8566a81b0326c.js.map

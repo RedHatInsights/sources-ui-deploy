@@ -1,2 +1,2 @@
 (self.webpackChunksources_ui=self.webpackChunksources_ui||[]).push([[5185],{15185:(e,s,a)=>{"use strict";a.d(s,{Z:()=>o});var r=a(98495);const o=function(e,s,a,o,u){var n=s.formatMessage({id:"sources.removeAppWarning",defaultMessage:"{ name } was removed from this source."},{name:e.display_name}),i=s.formatMessage({id:"sources.removeAppError",defaultMessage:"Removing of { name } application from this source was unsuccessful."},{name:e.display_name});return a&&a(),o((0,r.Yn)(e.id,u.id,n,i))}}}]);
-//# sourceMappingURL=../sourcemaps/5185.d4d2a3e0c9ec3942e932.js.map
+//# sourceMappingURL=../sourcemaps/5185.3e54398be404f789ccc1.js.map

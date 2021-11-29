@@ -1,0 +1,19 @@
+{
+  "version": "1.1.0",
+  "description": "",
+  "displayName": "",
+  "dependencies": {},
+  "disableStaticPlugins": [],
+  "extensions": [
+    {
+      "type": "console.page/route",
+      "properties": {
+        "path": "/marketplace",
+        "component": {
+          "$codeRef": "RecommendedServices"
+        }
+      }
+    }
+  ],
+  "name": "sources"
+}

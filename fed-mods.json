@@ -1,11 +1,11 @@
 {
     "sources": {
         "entry": [
-            "/apps/sources/sources.1644510501334.9f8ad30bf007f70312ba.js"
+            "/beta/apps/sources/sources.1644580535708.995cee6e49fcd28d21e5.js"
         ],
         "modules": [
-            "/apps/sources/js/9536.1644510501282.9f8ad30bf007f70312ba.js",
-            "/apps/sources/css/9536.939b13fd91bf5d8f81f9.css"
+            "/beta/apps/sources/js/9536.1644580535659.995cee6e49fcd28d21e5.js",
+            "/beta/apps/sources/css/9536.939b13fd91bf5d8f81f9.css"
         ]
     }
 }

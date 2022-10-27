@@ -1,14 +1,14 @@
 {
   "app_name": "sources",
   "node_version": ">=15.0.0",
-  "src_hash": "b26c26dcde1238ca395b5316071a64ba49b1f2f6",
+  "src_hash": "1c48a3528111c54e56400fa4d6acd2ddeb53e25c",
   "src_tag": "",
   "src_branch": "master",
   "patternfly_dependencies": ["@patternfly/react-core@4.250.1","@patternfly/react-icons@4.92.6","@patternfly/react-table@4.111.4"],
-  "rh_cloud_services_dependencies": ["@redhat-cloud-services/frontend-components-notifications@3.2.12","@redhat-cloud-services/frontend-components-utilities@3.3.2","@redhat-cloud-services/frontend-components@3.9.21"],
+  "rh_cloud_services_dependencies": ["@redhat-cloud-services/frontend-components-notifications@3.2.12","@redhat-cloud-services/frontend-components-utilities@3.3.4","@redhat-cloud-services/frontend-components@3.9.21"],
   "travis": {
     "event_type": "push",
-    "build_number": "3572",
-    "build_web_url": "https://app.travis-ci.com/RedHatInsights/sources-ui/builds/257144522"
+    "build_number": "3576",
+    "build_web_url": "https://app.travis-ci.com/RedHatInsights/sources-ui/builds/257154015"
   }
 }

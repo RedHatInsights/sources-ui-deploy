@@ -1,12 +1,11 @@
 {
     "sources": {
         "entry": [
-            "/apps/sources/sources.1663081893889.5184e629c402b41fecfb.js"
+            "/apps/sources/sources.4ac4eb7909a08e9217d6.js"
         ],
         "modules": [
-            "/apps/sources/js/257.1663081893830.5184e629c402b41fecfb.js",
-            "/apps/sources/css/257.920bb945f8a8157f09c1.css",
-            "/apps/sources/css/3415.accaf5e8c40afbb345fb.css"
+            "/apps/sources/js/257.4ac4eb7909a08e9217d6.js",
+            "/apps/sources/css/257.920bb945f8a8157f09c1.css"
         ]
     }
 }

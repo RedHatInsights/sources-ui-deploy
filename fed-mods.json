@@ -1,11 +1,11 @@
 {
-    "sources": {
-        "entry": [
-            "/beta/apps/sources/sources.92008e5f8349f37abf43.js"
-        ],
-        "modules": [
-            "/beta/apps/sources/js/112.92008e5f8349f37abf43.js",
-            "/beta/apps/sources/css/112.4db0013d426ee9066247.css"
-        ]
-    }
+  "name": "sources",
+  "version": "1.0.0",
+  "extensions": [],
+  "registrationMethod": "callback",
+  "baseURL": "/beta/apps/sources/",
+  "loadScripts": [
+    "sources.0393645aeffd60f264d6.js"
+  ],
+  "buildHash": "0393645aeffd60f264d6306e0ca05c2b"
 }

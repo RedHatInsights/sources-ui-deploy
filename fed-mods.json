@@ -1,11 +1,11 @@
 {
-    "sources": {
-        "entry": [
-            "/apps/sources/sources.da979977530b7fda97f5.js"
-        ],
-        "modules": [
-            "/apps/sources/js/565.da979977530b7fda97f5.js",
-            "/apps/sources/css/565.1212be730fb54bc5140e.css"
-        ]
-    }
+  "name": "sources",
+  "version": "1.0.0",
+  "extensions": [],
+  "registrationMethod": "callback",
+  "baseURL": "/apps/sources/",
+  "loadScripts": [
+    "sources.69ddbb2fe0e7ff516c10.js"
+  ],
+  "buildHash": "69ddbb2fe0e7ff516c10d75e8b562d07"
 }

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksources=self.webpackChunksources||[]).push([[7546],{17546:(c,s,e)=>{e.r(s),e.d(s,{PauseIcon:()=>a,PauseIconConfig:()=>u,default:()=>t});var h=e(40400);const u={name:"PauseIcon",height:512,width:448,svgPath:"M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z",yOffset:0,xOffset:0},a=(0,h.I)(u),t=a}}]);
-//# sourceMappingURL=../sourcemaps/7546.efda05f501e88ee2f9cbab50c6fefe66.js.map

@@ -5,7 +5,7 @@
   "registrationMethod": "callback",
   "baseURL": "/beta/apps/sources/",
   "loadScripts": [
-    "sources.cf050be0367b98883a30.js"
+    "sources.7ba193d42c198c5f5277.js"
   ],
-  "buildHash": "cf050be0367b98883a30f90ef7d10840"
+  "buildHash": "7ba193d42c198c5f5277beb25fb5de09"
 }
